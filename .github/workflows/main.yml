@@ -17,5 +17,7 @@ jobs:
         run: echo "test-workflow"
       - name: Multiline script
         run: |
+          echo "Printing node version....."
           node -v
+          echo "Printing npm version....."
           npm -v    
