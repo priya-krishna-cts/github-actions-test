@@ -1,0 +1,9 @@
+name: Priya
+age: 40
+address: 12, Brooklyn Close, Woking, GU22 7TH
+active: true
+relations:
+    - spouse: Roshan Rao Kallianpur
+    - siblings: none
+    - mother: D.Parvathy Bai
+    - children: Prathyush Kallianpur Rao
