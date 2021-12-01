@@ -1,0 +1,21 @@
+name: test-workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  run-shell-cmd: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a String
+        # While running on ubuntu use bash shell
+        run: echo "test-workflow"
+      - name: Multiline script
+        run: |
+          node -v
+          npm -v    
