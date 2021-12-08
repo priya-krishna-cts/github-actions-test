@@ -21,10 +21,14 @@ jobs:
           node -v
           echo "Printing npm version....."
           npm -v  
-      - name: List Files Before Checkout
+      - name: List Files & Env Variables Before Checkout
         run: |
           pwd
           ls  
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{github.token}}"
       - name: Checkout
         uses: actions/checkout@v1
       - name: List Files After Checkout
