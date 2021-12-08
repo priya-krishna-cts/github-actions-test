@@ -20,7 +20,17 @@ jobs:
           echo "Printing node version....."
           node -v
           echo "Printing npm version....."
-          npm -v    
+          npm -v  
+      - name: List Files Before Checkout
+        run: |
+          pwd
+          ls  
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls
       - name: python cmd
         run: |
           import platform
