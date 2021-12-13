@@ -1,7 +1,9 @@
-name: test-workflow
+name: actions-workflow
 
 on:
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,23 +29,3 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo "${{github.token}}"
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: List Files After Checkout
-        run: |
-          pwd
-          ls
-      - name: python cmd
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python
-  run-windows-cmd:
-    runs-on: windows-latest
-    needs: ["run-shell-cmd"]
-    steps:
-      - name: Directory Powershell
-        run: Get-Location
-      - name: Directory Bash
-        run: pwd
-        shell: bash
